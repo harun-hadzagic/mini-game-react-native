@@ -1,6 +1,8 @@
+import { Text } from "react-native"
+
 const GameOverScreen = () =>{
 
-    return
+    return <Text>Game is over</Text>
 }
 
 export default GameOverScreen
