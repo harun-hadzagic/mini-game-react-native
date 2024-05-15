@@ -7,7 +7,7 @@ const GameOverScreen = () => {
     <View style={styles.rootContainer}>
       <Title>GAME OVER!</Title>
       <View style={styles.imageContainer}>
-        <Image src={require("../assets/images/success.png")} style={styles.image}/>
+        <Image source={require("../assets/images/success.png")} style={styles.image}/>
       </View>
       <Text>Your phone needed X rounds to guess the number Y.</Text>
     </View>
