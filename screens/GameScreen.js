@@ -1,10 +1,12 @@
-import { Alert, StyleSheet, View } from "react-native";
+import { Alert, StyleSheet, Text, View } from "react-native";
 import Title from "../components/ui/Title";
 import { useEffect, useState } from "react";
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
+import { Ionicons } from "@expo/vector-icons";
+import Icon from "react-native-ionicons";
 
 const generateRandomBetween = (min, max, exclude) => {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -57,17 +59,22 @@ const GameScreen = ({ userNumber, gameOverHandler }) => {
       <Title>Opponent's Guess!</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
-        <InstructionText>Higher or lower?</InstructionText>
-      <View>
-        <PrimaryButton onPress={nextGuessHandler.bind(this, "higher")}>
-          +
-        </PrimaryButton>
-        <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-          -
-        </PrimaryButton>
-      </View>
+        <InstructionText style={styles.instructionText}>
+          Higher or lower?
+        </InstructionText>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+              <Text style={styles.buttonsText}>-</Text>
+            </PrimaryButton>
+          </View>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "higher")}>
+              <Text style={styles.buttonsText}>+</Text>
+            </PrimaryButton>
+          </View>
+        </View>
       </Card>
-
     </View>
   );
 };
@@ -78,5 +85,18 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
+  },
+  instructionText: {
+    marginBottom: 12,
+  },
+  buttonsText: {
+    fontSize: 24,
+    fontWeight: "bold",
   },
 });
