@@ -9,10 +9,9 @@ This app is created as part of my React Native learning journey. This app provid
 
 ## Project features
 
-- User can sign opet the add new goal modal
-- User can sign add a new goal
-- User can complete a goal by tapping on in in the goal list
-- User can see all active goals
+- User can pick a number
+- User can play with the app in making it guess the picked number
+- User can see game log
 
 ## Built with
 
@@ -22,7 +21,7 @@ This app is created as part of my React Native learning journey. This app provid
 
 1. Clone the repo
 
-   `https://github.com/harun-hadzagic/first-react-native-app`
+   `https://github.com/harun-hadzagic/mini-game-react-native`
 
 2. install npm packages
 
